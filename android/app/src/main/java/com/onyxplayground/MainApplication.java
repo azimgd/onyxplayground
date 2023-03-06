@@ -10,6 +10,8 @@ import com.facebook.react.defaults.DefaultReactNativeHost;
 import com.facebook.soloader.SoLoader;
 import java.util.List;
 
+import com.shopify.reactnativeperformance.ReactNativePerformance;
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost =
@@ -51,6 +53,8 @@ public class MainApplication extends Application implements ReactApplication {
 
   @Override
   public void onCreate() {
+    ReactNativePerformance.onAppStarted();
+
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
     if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
