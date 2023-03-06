@@ -7,6 +7,7 @@ import {
   PerformanceProfiler,
 } from '@shopify/react-native-performance';
 import HomeScreen from './screens/Home';
+import sample from './sample.json';
 
 // @ts-ignore
 import Onyx from 'react-native-onyx';
@@ -19,13 +20,12 @@ const config = {
 
 Onyx.init(config);
 
-Onyx.multiSet(
-  Array.from(Array(10000).keys()).reduce((acc, item) => {
-    // @ts-ignore
-    acc[item.toString()] = Math.random();
-    return acc;
-  }, {}),
-);
+// @ts-ignore
+const start = performance.now();
+Onyx.multiSet(sample);
+// @ts-ignore
+const end = performance.now();
+console.log(end - start);
 
 const Stack = createNativeStackNavigator();
 
