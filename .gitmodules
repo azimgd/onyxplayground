@@ -1,0 +1,3 @@
+[submodule "src/react-native-onyx"]
+	path = src/react-native-onyx
+	url = https://github.com/expensify/react-native-onyx

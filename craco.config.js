@@ -1,3 +1,4 @@
+const path = require('path');
 const {CracoAliasPlugin} = require('react-app-alias-ex');
 
 module.exports = {
@@ -9,5 +10,10 @@ module.exports = {
   ],
   eslint: {
     enable: false,
+  },
+  webpack: {
+    alias: {
+      'react-native-onyx': path.resolve(__dirname, 'src/react-native-onyx/lib'),
+    },
   },
 };

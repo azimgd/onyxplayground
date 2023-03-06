@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "react-native-onyx": ["src/react-native-onyx/lib/*"]
     }
   }
 }
