@@ -11,7 +11,6 @@ interface IHomeScreen {
 }
 
 function HomeScreen(props: PropsWithChildren<IHomeScreen>): JSX.Element {
-  console.log(props.session)
   return (
     <PerformanceMeasureView
       interactive={props.session !== undefined}
