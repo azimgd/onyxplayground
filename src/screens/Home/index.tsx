@@ -1,7 +1,6 @@
-import React, {PropsWithChildren} from 'react';
+import React, {useEffect, PropsWithChildren} from 'react';
 import {Text, View} from 'react-native';
 import {PerformanceMeasureView} from '@shopify/react-native-performance';
-import ONYXKEYS from '../../ONYXKEYS';
 
 // @ts-ignore
 import {withOnyx} from 'react-native-onyx';
@@ -24,6 +23,6 @@ function HomeScreen(props: PropsWithChildren<IHomeScreen>): JSX.Element {
 
 export default withOnyx({
   session: {
-    key: ONYXKEYS.SESSION,
+    key: '5',
   },
 })(HomeScreen);

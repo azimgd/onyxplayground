@@ -14,13 +14,18 @@ import ONYXKEYS from './ONYXKEYS';
 
 const config = {
   keys: ONYXKEYS,
+  captureMetrics: true,
 };
 
 Onyx.init(config);
-Onyx.set(ONYXKEYS.SESSION, null);
-setTimeout(() => {
-  Onyx.set(ONYXKEYS.SESSION, {token: 'response.token'});
-}, 2000);
+
+Onyx.multiSet(
+  Array.from(Array(10000).keys()).reduce((acc, item) => {
+    // @ts-ignore
+    acc[item.toString()] = Math.random();
+    return acc;
+  }, {}),
+);
 
 const Stack = createNativeStackNavigator();
 
